@@ -162,54 +162,106 @@ class HomeContent extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            const Text(
-              'Recent Transactions',
-              style: TextStyle(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+              const Text(
+                'Recent Transactions',
+                style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
+                ),
               ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                'See All',
+                style: TextStyle(color: Color(0xFF2E5CB8)),
+                ),
+              ),
+              ],
             ),
             const SizedBox(height: 10),
             Expanded(
               child: ListView.builder(
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  return Card(
-                    margin: const EdgeInsets.symmetric(vertical: 5),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: index % 2 == 0
-                            ? Colors.red.withOpacity(0.1)
-                            : Colors.green.withOpacity(0.1),
-                        child: Icon(
-                          index % 2 == 0
-                              ? Icons.arrow_upward
-                              : Icons.arrow_downward,
-                          color: index % 2 == 0 ? Colors.red : Colors.green,
-                        ),
-                      ),
-                      title: Text(
-                        index % 2 == 0 ? 'Payment to Store' : 'Salary Deposit',
-                        style: const TextStyle(fontWeight: FontWeight.w500),
-                      ),
-                      subtitle: const Text('Oct 1, 2023'),
-                      trailing: Text(
-                        index % 2 == 0 ? '-\$50.00' : '+\$5,000.00',
-                        style: TextStyle(
-                          color: index % 2 == 0 ? Colors.red : Colors.green,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+              itemCount: 3,
+              itemBuilder: (context, index) {
+                return Container(
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 1,
+                    blurRadius: 8,
+                    offset: const Offset(0, 2),
+                  ),
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Row(
+                  children: [
+                    Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: index % 2 == 0
+                        ? Colors.red.withOpacity(0.1)
+                        : Colors.green.withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                  );
-                },
+                    child: Icon(
+                      index % 2 == 0
+                        ? Icons.shopping_bag
+                        : Icons.account_balance_wallet,
+                      color: index % 2 == 0 ? Colors.red : Colors.green,
+                    ),
+                    ),
+                    const SizedBox(width: 15),
+                    Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                      Text(
+                        index % 2 == 0 ? 'Payment to Store' : 'Salary Deposit',
+                        style: const TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Oct 1, 2023 • 10:30 AM',
+                        style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 13,
+                        ),
+                      ),
+                      ],
+                    ),
+                    ),
+                    Text(
+                    index % 2 == 0 ? '-\$50.00' : '+\$5,000.00',
+                    style: TextStyle(
+                      color: index % 2 == 0 ? Colors.red : Colors.green,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                    ),
+                  ],
+                  ),
+                ),
+                );
+              },
               ),
             ),
-          ],
-        ),
-      ),
-    );
-  }
+            ],
+          ),
+          ),
+        );
+        }
 
   Widget _buildActionButton({
     required IconData icon,
