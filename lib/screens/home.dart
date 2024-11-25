@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bank_app/components/navbar.dart'; 
 import 'card.dart'; 
 import 'settings.dart';
+import 'statistics.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -239,16 +240,7 @@ class HomeContent extends StatelessWidget {
 }
 
 // Placeholder for StatisticsScreen
-class StatisticsScreen extends StatelessWidget {
-  const StatisticsScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Statistics Screen'),
-    );
-  }
-}
 
 
 

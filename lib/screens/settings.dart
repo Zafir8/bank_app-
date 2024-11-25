@@ -145,7 +145,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Color.fromARGB(255, 0, 0, 0),
             ),
           ),
           const SizedBox(height: 8),
@@ -153,7 +153,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             'john.doe@example.com',
             style: TextStyle(
               fontSize: 16,
-              color: Colors.white.withOpacity(0.8),
+              color: const Color.fromARGB(255, 0, 0, 0).withOpacity(0.8),
             ),
           ),
         ],
