@@ -4,6 +4,7 @@ import 'card.dart';
 import 'settings.dart';
 import 'statistics.dart';
 import 'package:bank_app/screens/send.dart';
+import 'package:bank_app/screens/pay.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -157,7 +158,14 @@ class HomeContent extends StatelessWidget {
                   icon: Icons.payments,
                   label: 'Pay',
                   color: const Color(0xFF2E5CB8),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PayScreen(),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
