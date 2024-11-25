@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:bank_app/components/navbar.dart'; 
 import 'card.dart'; 
+import 'settings.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,7 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
-  // List of pages corresponding to each navigation item
+  
   final List<Widget> _pages = [
     const HomeContent(),       
     const StatisticsScreen(),  
@@ -252,13 +253,3 @@ class StatisticsScreen extends StatelessWidget {
 
 
 
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Settings Screen'),
-    );
-  }
-}
