@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:bank_app/components/navbar.dart'; 
-import 'card.dart'; 
+import 'package:bank_app/components/navbar.dart';
+import 'card.dart';
 import 'settings.dart';
 import 'statistics.dart';
+import 'package:bank_app/screens/send.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,12 +15,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
-  
   final List<Widget> _pages = [
-    const HomeContent(),       
-    const StatisticsScreen(),  
-    const CardScreen(),        
-    const SettingsScreen(),    
+    const HomeContent(),
+    const StatisticsScreen(),
+    const CardScreen(),
+    const SettingsScreen(),
   ];
 
   void _onNavigationItemTapped(int index) {
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: _pages[_currentIndex], 
+      body: _pages[_currentIndex],
       bottomNavigationBar: CustomNavigationBar(
         currentIndex: _currentIndex,
         onTap: _onNavigationItemTapped,
@@ -81,7 +81,7 @@ class HomeContent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Welcome, User!',
+              'Welcome, Zafir!',
               style: TextStyle(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
@@ -129,6 +129,8 @@ class HomeContent extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
+
+            // Action buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -136,7 +138,14 @@ class HomeContent extends StatelessWidget {
                   icon: Icons.send,
                   label: 'Send',
                   color: const Color(0xFF2E5CB8),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SendMoneyScreen(),
+                      ),
+                    );
+                  },
                 ),
                 _buildActionButton(
                   icon: Icons.account_balance_wallet,
