@@ -140,13 +140,13 @@ class _PayScreenState extends State<PayScreen> {
                                 ),
                               ),
                             )
-                          : Column(
+                          : const Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: const [
+                                  children: [
                                     Text(
                                       'Available Balance',
                                       style: TextStyle(
@@ -165,7 +165,7 @@ class _PayScreenState extends State<PayScreen> {
                                     ),
                                   ],
                                 ),
-                                const Text(
+                                Text(
                                   '**** **** **** 1234',
                                   style: TextStyle(
                                     color: Colors.white,

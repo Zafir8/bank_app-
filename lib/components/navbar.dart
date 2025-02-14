@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:bank_app/screens/card.dart';
 
 class CustomNavigationBar extends StatelessWidget {
   final int currentIndex;

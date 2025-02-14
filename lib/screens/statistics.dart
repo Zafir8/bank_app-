@@ -153,9 +153,9 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
       height: 300,
       child: LineChart(
         LineChartData(
-          gridData: FlGridData(show: false),
+          gridData: const FlGridData(show: false),
           titlesData: FlTitlesData(
-            leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+            leftTitles: const AxisTitles(sideTitles: SideTitles(showTitles: false)),
             bottomTitles: AxisTitles(
               sideTitles: SideTitles(
                 showTitles: true,
@@ -196,7 +196,7 @@ class _StatisticsScreenState extends State<StatisticsScreen> {
               isCurved: true,
               color: const Color(0xFF2E5CB8),
               barWidth: 3,
-              dotData: FlDotData(show: false),
+              dotData: const FlDotData(show: false),
               belowBarData: BarAreaData(
                 show: true,
                 color: const Color(0xFF2E5CB8).withOpacity(0.1),
